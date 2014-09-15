@@ -1,5 +1,4 @@
-getting_cleaning_data
-=====================
+##run_analysis.R
 
 This script first reads in all the raw data (training and test), as well as the 
 'features' table (which contains a description of all the measurements in the 
@@ -27,10 +26,10 @@ with Subject, Activity, and measurements columns.  Label with 'features' vector.
 Create 'merged_data' with rbind.  Replaced the 'Activity' column (which is 
 numeric) with the descriptive labels in 'activity_labels'.
 
-The first column here is 'Subject', which is numeric value (1:30) that indicates 
-the subject.  Second column is 'Activity, which is a numeric value (1:6) that 
+The first column here is 'Subject', which is a numeric value (1:30) that indicates 
+the subject.  Second column is 'Activity', which is a character value that 
 indicates the activity.  The rest of the columns represent various accelerometer 
-measurements.
+measurements (numeric).
 
 ##Subset mean and std data
 
