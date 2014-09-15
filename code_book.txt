@@ -1,0 +1,18 @@
+##Codebook
+
+The final output of 'run_analysis.R' is the file 'course_assignment.txt'
+
+It contains four columns:
+
+1) Subject - numeric value between 1:30, indicating which subject is
+associated with each observation
+
+2)Activity - character value indicating the sort of activity is 
+associated with each observation (e.g., "SITTING", "LAYING", etc.)
+
+3)variable - character value indicating which sort of measurement 
+each observation corresponds to (these are either means or standard
+deviations for various accelerometer outputs)
+
+4)mean - numeric value indicating the mean of each permutation of
+Subject, Activity and variable (measurement)

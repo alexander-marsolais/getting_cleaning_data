@@ -4,23 +4,23 @@ getting_cleaning_data
 This script first reads in all the raw data (training and test), as well as the 
 'features' table (which contains a description of all the measurements in the 
 study) and the 'activity_labels' table (which describes each activity in the 
-study)
+study).
 
 ##Reading in raw data
 
 Start by saving root working directory as 'wd', so working directory can be
-switched during reading in of raw data
+switched during reading in of raw data.
 
 Then save 'features' and 'activity_labels' as character vectors from 
-respective tables in root directory
+respective tables in root directory.
 
 Switch working directory to '/train' folder, and read in raw data 
 (subject and measurements).  Create 'train_bind' (using cbind) 
-with Subject, Activity, and measurements columns.  Label with 'features' vector
+with Subject, Activity, and measurements columns.  Label with 'features' vector.
 
 Switch working directory to '/test' folder, and read in raw data 
 (subject and measurements).  Create 'test_bind' (using cbind) 
-with Subject, Activity, and measurements columns.  Label with 'features' vector
+with Subject, Activity, and measurements columns.  Label with 'features' vector.
 
 ##Merge the data
 
@@ -48,10 +48,13 @@ measurements), but only contains 'mean' or 'std' measurements.
 'merged_subset' was first melted using melt() (from reshape2 package), with 
 id.vars=c("Subject", "Activity"), and stored in 'melt_subset' data.frame.
 
-'melt_subset' contains four columns; 'Subject', 'Activity', 'variable' 
+'melt_subset' contains four columns; 'Subject', 'Activity', 'variable', 'value'.
 
 Then ddply() (from plyr package) was called on 'melt_subset', with 
 .(Subject, Activity, variable) as .variable argument, and 'summarise, 
 mean=mean(value)' passed to .fun argument.
 
-Resulting data.frame is called 'merged_subset_means'
+Resulting data.frame is called 'merged_subset_means'.
+
+This is then exported as text file ('course_assignment.txt') into 
+the root directory.
